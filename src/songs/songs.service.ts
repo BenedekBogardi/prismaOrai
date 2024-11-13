@@ -50,4 +50,16 @@ export class SongsService {
       return undefined;
     }
   }
+
+  findFree(){
+    return this.db.songs.findMany({
+      where: {
+        price: 0
+      }
+    })
+  }
+
+  getTop(){
+    
+  }
 }

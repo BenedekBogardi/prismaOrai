@@ -1,4 +1,4 @@
-import { IsInt, IsNotEmpty, IsString, Min } from 'class-validator';
+import { IsInt, IsNotEmpty, IsString, Max, Min } from 'class-validator';
 
 export class CreateSongDto {
   @IsString()
@@ -18,4 +18,10 @@ export class CreateSongDto {
   @IsNotEmpty()
   @Min(0)
   price: number;
+
+  @IsInt()
+  @IsNotEmpty()
+  @Min(0)
+  @Max(5)
+  rating: number;
 }
